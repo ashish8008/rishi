@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You 💖</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI,sans-serif;
+    background:radial-gradient(circle,#ff9a9e,#fad0c4);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+h1{margin-top:20px;font-size:2.7em;}
+
+#lock{
+    position:fixed;
+    inset:0;
+    background:black;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    z-index:9999;
+}
+
+input{
+    padding:10px;
+    font-size:1em;
+    border-radius:5px;
+    border:none;
+}
+
+button{
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+    background:#ff4d6d;
+    color:white;
+    font-size:1em;
+    cursor:pointer;
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin:30px;
+}
+
+.gallery img{
+    width:180px;
+    height:180px;
+    border-radius:20px;
+    object-fit:cover;
+    animation: float 6s infinite;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.gallery img:hover{
+    transform: scale(1.6);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+@keyframes float{
+    50%{transform:translateY(-15px);}
+}
+
+.timeline{
+    width:80%;
+    margin:auto;
+    text-align:left;
+    font-size:1.1em;
+}
+
+.timeline div{
+    margin:15px 0;
+    padding-left:10px;
+    border-left:3px solid white;
+}
+
+.love{
+    font-size:2.2em;
+    margin:40px;
+    animation:glow 2s infinite;
+}
+
+@keyframes glow{
+    50%{text-shadow:0 0 20px pink;}
+}
+
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:25px;
+    animation:up 6s linear;
+}
+
+@keyframes up{
+    to{transform:translateY(-100vh);opacity:0;}
+}
+
+.firework{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:yellow;
+    border-radius:50%;
+    animation:boom 1s ease-out;
+}
+
+@keyframes boom{
+    to{transform:scale(20);opacity:0;}
+}
+</style>
+</head>
+
+<body onclick="fireworks(event)">
+
+<!-- PASSWORD LOCK -->
+<div id="lock">
+    <h2>🔐 Enter Password</h2>
+    <p>(Hint: your nickname)</p>
+    <input id="pass" type="password">
+    <button onclick="unlock()">Unlock 💖</button>
+</div>
+
+<h1>💖 Just For You 💖</h1>
+
+<p>
+Every surprise here is made with love ❤️
+</p>
+
+<!-- PHOTO GALLERY -->
+<div class="gallery">
+    <img src="c:\Users\ashis\Downloads\WhatsApp Image 2026-01-11 at 8.54.43 PM (3).jpeg">
+    <img src="c:\Users\ashis\Downloads\WhatsApp Image 2026-01-11 at 8.54.42 PM.jpeg">
+    <img src="c:\Users\ashis\Downloads\WhatsApp Image 2026-01-11 at 8.54.42 PM (1).jpeg">
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline">
+    <div>💫 The day I met you – my life changed</div>
+    <div>💍 The day you became mine forever</div>
+    <div>🏡 Building dreams together</div>
+    <div>❤️ Forever & always</div>
+</div>
+
+<!-- VIDEO -->
+<video controls autoplay muted loop style="width:85%;max-width:600px;border-radius:20px;">
+    <source src="c:\Users\ashis\Downloads\WhatsApp Video 2026-01-11 at 8.54.40 PM.mp4">
+</video>
+
+<!-- VOICE MESSAGE -->
+<br><br>
+<button onclick="playVoice()">🎙️ Play My Voice</button>
+<!-- <audio id="voice">
+    <source src="c:\Users\ashis\Downloads\Edd_Sheeran_-_Perfect_(mp3.pm) - Copy.mp3">
+</audio> -->
+
+<div class="love">
+I LOVE YOU Bangaram ❤️ FOREVER
+</div>
+
+<audio autoplay loop>
+    <source src="c:\Users\ashis\Downloads\Edd_Sheeran_-_Perfect_(mp3.pm) - Copy.mp3">
+</audio>
+
+<script>
+/* PASSWORD */
+function unlock(){
+    if(document.getElementById("pass").value==="potti"){
+        document.getElementById("lock").style.display="none";
+    } else {
+        alert("Wrong password 😜");
+    }
+}
+
+
+/* Floating hearts */
+setInterval(()=>{
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+},400);
+
+/* Fireworks on click */
+function fireworks(e){
+    const f=document.createElement("div");
+    f.className="firework";
+    f.style.left=e.clientX+"px";
+    f.style.top=e.clientY+"px";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),1000);
+}
+
+/* Voice */
+function playVoice(){
+    document.getElementById("voice").play();
+}
+</script>
+<button onclick="goToLove()">Our Love Story 💖</button>
+
+<script>
+function goToLove() {
+    window.location.href = "love.html"; // link to love page
+}
+</script>
+
+
+</body>
+</html>

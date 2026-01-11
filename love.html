@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Love Story ❤️</title>
+<style>
+body {
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(120deg,#ff9a9e,#fad0c4,#ffdde1);
+    background-size: 600% 600%;
+    animation: bgMove 20s ease infinite;
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+h1{
+    margin-top:30px;
+    font-size:3em;
+    animation:fadeDown 2s ease;
+    text-shadow:0 0 20px rgba(255,255,255,0.4);
+}
+
+@keyframes fadeDown {
+    from{opacity:0;transform:translateY(-50px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* LOVE MESSAGES */
+.message {
+    font-size:1.3em;
+    margin:20px auto;
+    width:80%;
+    opacity:0;
+    animation:fadeIn 1s forwards;
+}
+
+@keyframes fadeIn { to{opacity:1;} }
+
+/* PHOTOS */
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin:30px;
+}
+
+.gallery img{
+    width:180px;
+    height:180px;
+    border-radius:20px;
+    object-fit:cover;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.gallery img:hover{
+    transform: scale(1.6);
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+    z-index:10;
+    position:relative;
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:25px;
+    animation:up 6s linear;
+}
+
+@keyframes up{
+    to{transform:translateY(-100vh);opacity:0;}
+}
+
+/* Button */
+button{
+    margin:40px 0;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff4d6d;
+    font-size:1.1em;
+    cursor:pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 40px rgba(255,255,255,0.9);
+}
+
+/* Fade-in sequence animation for messages */
+.message:nth-child(1){animation-delay:1s;}
+.message:nth-child(2){animation-delay:1.5s;}
+.message:nth-child(3){animation-delay:3s;}
+.message:nth-child(4){animation-delay:4.5s;}
+.message:nth-child(5){animation-delay:7s;}
+
+</style>
+</head>
+<body>
+
+<h1>💖 Our Love Story 💖</h1>
+
+<div class="message">From the moment I met you, my life changed forever… ✨</div>
+<div class="message">Every laugh, every hug, every moment with you is magic 🌟</div>
+<div class="message">You are my partner, my best friend, my everything 💕</div>
+<div class="message">Through ups and downs, our love only grows stronger ❤️</div>
+<div class="message">Forever and always, I am yours 💍</div>
+
+<!-- PHOTO GALLERY -->
+<div class="gallery">
+    <img src="f:\Android\data\com.mobisystems.office\files\IMG-20240704-WA0030.jpg" alt="Love Memory 1">
+    <img src="f:\Android\data\com.mobisystems.office\files\d26f36b3a4c9d82ef39a19d0aa4db3a5.jpg" alt="Love Memory 2">
+    <img src="c:\Users\ashis\Downloads\WhatsApp Image 2026-01-11 at 8.54.40 PM.jpeg" alt="Love Memory 3">
+</div>
+
+<!-- Button to go back -->
+<button onclick="goBack()">Back to Surprise 🎁</button>
+
+<!-- Floating hearts -->
+<script>
+setInterval(()=>{
+    const h = document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left = Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+},400);
+
+function goBack(){
+    window.location.href="surprise.html";
+}
+</script>
+<button onclick="goToLove2()">More 💖</button>
+
+<script>
+
+
+function goToLove2(){
+    window.location.href = "love2.html"; // links to the new page
+}
+</script>
+
+
+</body>
+</html>

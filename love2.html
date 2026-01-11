@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>How Much I Love You ❤️</title>
+<style>
+body {
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(120deg,#ff758c,#ff9a9e,#ff9a9e);
+    background-size: 600% 600%;
+    animation: bgMove 20s ease infinite;
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+h1{
+    margin-top:30px;
+    font-size:3em;
+    text-shadow:0 0 20px rgba(255,255,255,0.5);
+    animation:fadeDown 2s ease;
+}
+
+@keyframes fadeDown {
+    from{opacity:0;transform:translateY(-50px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* LOVE MESSAGES */
+.message {
+    font-size:1.4em;
+    margin:20px auto;
+    width:80%;
+    opacity:0;
+    animation:fadeIn 2s forwards;
+}
+
+@keyframes fadeIn { to{opacity:1;} }
+
+/* Typewriter effect for special lines */
+.typewriter {
+    display:inline-block;
+    overflow:hidden;
+    border-right: .15em solid rgba(255,255,255,0.8);
+    white-space: nowrap;
+    animation: typing 4s steps(40,end), blink .7s infinite;
+}
+
+@keyframes typing {
+    from { width:0; }
+    to { width:100%; }
+}
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:25px;
+    animation:up 6s linear;
+}
+@keyframes up{
+    to{transform:translateY(-100vh);opacity:0;}
+}
+
+/* PHOTOS */
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin:30px;
+}
+.gallery img{
+    width:180px;
+    height:180px;
+    border-radius:20px;
+    object-fit:cover;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+.gallery img:hover{
+    transform: scale(1.6);
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+    z-index:10;
+    position:relative;
+}
+
+/* BUTTON */
+button{
+    margin:30px 0;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff4d6d;
+    font-size:1.1em;
+    cursor:pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 40px rgba(255,255,255,0.9);
+}
+
+/* Fade-in sequence */
+.message:nth-child(1){animation-delay:1s;}
+.message:nth-child(2){animation-delay:2.5s;}
+.message:nth-child(3){animation-delay:4s;}
+.message:nth-child(4){animation-delay:5.5s;}
+.message:nth-child(5){animation-delay:7s;}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ How Much I Love You ❤️</h1>
+
+<div class="message">Every day I spend with you, my heart grows fuller 💖</div>
+<div class="message">Your smile is my sunshine ☀️</div>
+<div class="message">Your happiness is my happiness 🌸</div>
+<div class="message typewriter">I love you more than words can ever express… 💕</div>
+<div class="message">Forever yours, with all my heart 💍</div>
+
+<!-- PHOTO GALLERY -->
+<div class="gallery">
+    <img src="f:\Android\data\com.mobisystems.office\files\IMG-20240704-WA0005.jpg" alt="Memory 1">
+    <img src="f:\Android\data\com.mobisystems.office\files\IMG-20240704-WA0018.jpg" alt="Memory 2">
+    <img src="f:\Android\data\com.mobisystems.office\files\IMG-20240925-WA0095.jpg" alt="Memory 3">
+</div>
+
+<!-- BUTTON to go back to love page -->
+<button onclick="goBack()">Back to Our Love Story 💖</button>
+
+<!-- Floating hearts -->
+<script>
+setInterval(()=>{
+    const h = document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left = Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+},400);
+
+function goBack(){
+    window.location.href="love.html";
+}
+
+
+</script>
+
+<button onclick="goToFeelings()">See My Feelings 💖</button>
+
+<script>
+function goToFeelings(){
+    window.location.href = "feelings.html"; // links to the new page
+}
+</script>
+
+
+
+</body>
+</html>
